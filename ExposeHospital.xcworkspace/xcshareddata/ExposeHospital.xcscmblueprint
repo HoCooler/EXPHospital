@@ -1,0 +1,29 @@
+{
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "7220A93D1A5E08B0C8E5DED0604C1504075F2D7D" : 0,
+    "880EB74B45CF488308DFB65177E88EDDC88C4EBC" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "CFA4D056-955A-4ABF-B121-3560E80337E1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7220A93D1A5E08B0C8E5DED0604C1504075F2D7D" : "",
+    "880EB74B45CF488308DFB65177E88EDDC88C4EBC" : "ExposeHospital\/ExposeHospital\/libextobjc\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ExposeHospital",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ExposeHospital.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/brain-cooler\/ZhiHuDaily.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7220A93D1A5E08B0C8E5DED0604C1504075F2D7D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:jspahrsummers\/libextobjc.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "880EB74B45CF488308DFB65177E88EDDC88C4EBC"
+    }
+  ]
+}
