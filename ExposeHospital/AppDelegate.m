@@ -28,7 +28,9 @@
 	[[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
 	
 	UIViewController *homePage = [EXPHomePageViewController new];
-	self.window.rootViewController = homePage;
+    UINavigationController *homeNav = [[UINavigationController alloc] initWithRootViewController:homePage];
+
+	self.window.rootViewController = homeNav;
 	
 	[self.window makeKeyAndVisible];
 	

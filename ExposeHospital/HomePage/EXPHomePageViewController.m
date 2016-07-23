@@ -12,15 +12,16 @@
 #import "EXPHomepageViewModel.h"
 #import "EXPDataReaderModel.h"
 #import "CCHMapClusterController.h"
-
+#import "EXPListViewController.h"
 
 static const CGFloat kTitleViewHeight = 30.0;
-
+static const CGFloat kSearchIconLength = 15;
+static const CGFloat kGapBetweenSearchIconAndPlaceholder = 4;
+static const CGFloat kLeftSearchBarWidth = 60;
 
 @interface EXPHomePageViewController ()
 
 @property (nonatomic, strong) MKMapView *mapView;
-//@property (nonatomic, strong) UIView *featureView;
 
 @property (nonatomic, strong) EXPHomePageViewModel *viewModel;//Fetch From Network
 @property (nonatomic, strong) EXPDataReaderModel *dataReader;
@@ -38,15 +39,17 @@ static const CGFloat kTitleViewHeight = 30.0;
 	
 	self.view.backgroundColor = [UIColor whiteColor];
 	
-//	CLLocationCoordinate2D location = CLLocationCoordinate2DMake(52.516221, 13.377829);
-//	CLLocationCoordinate2D location = CLLocationCoordinate2DMake(31.3736824,121.4971624);
-	
-	CLLocationCoordinate2D location = CLLocationCoordinate2DMake(30.752825,103.966526);
-
-	MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location, 400000, 400000);
-	
-	[self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
-	
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        CLLocationCoordinate2D location = CLLocationCoordinate2DMake(52.516221, 13.377829);
+//        CLLocationCoordinate2D location = CLLocationCoordinate2DMake(31.3736824,121.4971624);
+       
+    });
+    
+    CLLocationCoordinate2D location = CLLocationCoordinate2DMake(30.752825,103.966526);
+    
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location, 400000, 400000);
+    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
+    
 	[self refresh];
 }
 
@@ -78,11 +81,10 @@ static const CGFloat kTitleViewHeight = 30.0;
     self.mapView.showsCompass = NO;
     self.mapView.showsPointsOfInterest = NO;
     self.mapView.showsUserLocation = YES;
-    self.mapView.showsBuildings = YES;
     self.mapView.delegate = self;
     [self.view addSubview:self.mapView];
     
-    _dataReader = [[EXPDataReaderModel alloc] init];
+    _dataReader = [EXPDataReaderModel defaultDataReaderModel];
     _dataReader.delegate = self;
     
     _mapClusterController = [[CCHMapClusterController alloc] initWithMapView:self.mapView];
@@ -92,78 +94,53 @@ static const CGFloat kTitleViewHeight = 30.0;
 
 - (void)loadTheNavigationBar
 {
-//    CGFloat titleViewWidth = SCREEN_WIDTH;
-//    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, , kTitleViewHeight)];
-//    UIControl *titleContainerControl = [[UIControl alloc] initWithFrame:CGRectMake(-kTitleViewMargin, 0, titleViewWidth, kTitleViewHeight)];
-//    titleContainerControl.layer.cornerRadius = kTitleViewHeight / 2;
-//    titleContainerControl.layer.backgroundColor = HEXCOLOR(0xebeced).CGColor;
-//    titleContainerControl.accessibilityLabel = @"请输入搜索关键词";
-//    
-//    [titleView addSubview:titleContainerControl];
-//    self.navigationItem.titleView = titleView;
-//    
-//    UIImageView *leftView = [[UIImageView alloc] initWithFrame:CGRectMake(0, (kTitleViewHeight - kSearchIconSideLength) / 2, kSearchIconSideLength, kSearchIconSideLength)];
-//    leftView.image = [UIImage def_imageNamed:@"icon_food_homepage_search"];
-//    
-//    NSString *placeholderText = @"输入商家名、品类或商圈";
-//    CGFloat textColLength = [placeholderText sizeWithAttributes:@{NSFontAttributeName : Font(13)}].width;
-//    CGFloat textMaxLength = titleViewWidth - kTitleViewHeight - kSearchIconSideLength - kGapBetweenSearchIconAndPlaceholder;
-//    CGFloat textRealLength = MIN(textColLength, textMaxLength);
-//    
-//    UILabel *placeholderLable = [[UILabel alloc] initWithFrame:CGRectMake(kSearchIconSideLength + kGapBetweenSearchIconAndPlaceholder, 0, textRealLength, kTitleViewHeight)];
-//    placeholderLable.text = placeholderText;
-//    placeholderLable.font = Font(13);
-//    placeholderLable.textColor = HEXCOLOR(0x666666);
-//    
-//    CGFloat iconAndTextViewWidth = kSearchIconSideLength + kGapBetweenSearchIconAndPlaceholder + textRealLength;
-//    UIView *iconAndTextView = [[UIView alloc] initWithFrame:CGRectMake((titleViewWidth - iconAndTextViewWidth) / 2, 0, iconAndTextViewWidth, kTitleViewHeight)];
-//    iconAndTextView.userInteractionEnabled = NO;
-//    [iconAndTextView addSubview:leftView];
-//    [iconAndTextView addSubview:placeholderLable];
-//    [titleContainerControl addSubview:iconAndTextView];
-//    
-//    UIBarButtonItem *mapBarButtonItem = [UIBarButtonItem ipf_rightBarButtonItemWithType:IPFBarButtonItemTypeMap target:self action:@selector(didClickedMap)];
-//    mapBarButtonItem.accessibilityLabel = @"地图";
-//    self.navigationItem.rightBarButtonItem = mapBarButtonItem;
-//    
-//    @weakify(self);
-//    [[titleContainerControl rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIControl *control) {
-//        @strongify(self);
-//        
-//        [self scrollFilterViewToTop];
-//        
-//        NSString *urlString = [NSString stringWithFormat:@"imeituan://www.meituan.com/search/searchViewController"];
-//        NSURL *url = [NSURL URLWithString:urlString];
-//        
-//        NSMutableDictionary *userInfo = [@{
-//                                           @"searchMode": @(MTSearchModeGroupFirst),
-//                                           @"entrance": @(METSearchEntranceHomeDealList),
-//                                           @"categoryID": @([self.filterViewModel.currentCategory.categoryID intValue]),
-//                                           @"categoryName": self.filterViewModel.currentCategory.name ?: @"全部",
-//                                           @"steCategoryID": @(kMTFoodCategoryID)
-//                                           } mutableCopy];
-//        CLLocation *location = [[[MTLocationManager defaultManager] lastLocation] marsLocation];
-//        if (location) {
-//            userInfo[@"userLocation"] = location;
-//        }
-//        [SAKAnalytics trackEvent:self.pageName action:@"点击搜索" label:[self.filterViewModel.currentCategory.itemName stringByAppendingString:@"-搜索"] value:nil];
-//        if ([self.pageName isEqualToString:kDEFHomePageName]) {
-//            [SAKEnvironment environment].entrance = [(self.originEntrance ?: @"") stringByAppendingString:@"__gfood__hsearch"];
-//        }
-//        self.portalContext = userInfo;
-//        [SAKPortal transferFromViewController:self toURL:url completion:nil];
-//    }];
-//    
-//    @weakify(titleContainerControl);
-//    [[titleContainerControl rac_signalForControlEvents:UIControlEventTouchDown] subscribeNext:^(UIControl *control) {
-//        @strongify(titleContainerControl);
-//        titleContainerControl.layer.backgroundColor = HEXCOLOR(0xe8e8e8).CGColor;
-//    }];
-//    
-//    [[titleContainerControl rac_signalForControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside] subscribeNext:^(UIControl *control) {
-//        @strongify(titleContainerControl);
-//        titleContainerControl.layer.backgroundColor = HEXCOLOR(0xebeced).CGColor;
-//    }];
+    CGFloat titleViewWidth = SCREEN_WIDTH - kLeftSearchBarWidth * 2;
+    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(kLeftSearchBarWidth, 0, titleViewWidth, kTitleViewHeight)];
+    UIControl *titleContainerControl = [[UIControl alloc] initWithFrame:CGRectMake(0, 0, titleViewWidth, kTitleViewHeight)];
+    titleContainerControl.layer.cornerRadius = kTitleViewHeight / 2;
+    titleContainerControl.layer.backgroundColor = HEXCOLOR(0xebeced).CGColor;
+    titleContainerControl.accessibilityLabel = @"请输入搜索关键词";
+    
+    [titleView addSubview:titleContainerControl];
+    self.navigationItem.titleView = titleView;
+    
+    UIImageView *leftView = [[UIImageView alloc] initWithFrame:CGRectMake(0, (kTitleViewHeight - kSearchIconLength) / 2, kSearchIconLength, kSearchIconLength)];
+    leftView.image = [UIImage imageNamed:@"icon_food_homepage_search"];
+    
+    NSString *placeholderText = @"输入医院名称";
+    CGFloat textColLength = [placeholderText sizeWithAttributes:@{NSFontAttributeName : Font(13)}].width;
+    CGFloat textMaxLength = titleViewWidth - kTitleViewHeight - kSearchIconLength - kGapBetweenSearchIconAndPlaceholder;
+    CGFloat textRealLength = MIN(textColLength, textMaxLength);
+    
+    UILabel *placeholderLable = [[UILabel alloc] initWithFrame:CGRectMake(kSearchIconLength + kGapBetweenSearchIconAndPlaceholder, 0, textRealLength, kTitleViewHeight)];
+    placeholderLable.text = placeholderText;
+    placeholderLable.font = Font(13);
+    placeholderLable.textColor = HEXCOLOR(0x666666);
+    
+    CGFloat iconAndTextViewWidth = kSearchIconLength + kGapBetweenSearchIconAndPlaceholder + textRealLength;
+    UIView *iconAndTextView = [[UIView alloc] initWithFrame:CGRectMake((titleViewWidth - iconAndTextViewWidth) / 2, 0, iconAndTextViewWidth, kTitleViewHeight)];
+    iconAndTextView.userInteractionEnabled = NO;
+    [iconAndTextView addSubview:leftView];
+    [iconAndTextView addSubview:placeholderLable];
+    [titleContainerControl addSubview:iconAndTextView];
+    
+    @weakify(self);
+    [[titleContainerControl rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIControl *control) {
+        @strongify(self);
+        EXPListViewController *listVC = [[EXPListViewController alloc] init];
+        [self.navigationController pushViewController:listVC animated:YES];
+    }];
+    
+    @weakify(titleContainerControl);
+    [[titleContainerControl rac_signalForControlEvents:UIControlEventTouchDown] subscribeNext:^(UIControl *control) {
+        @strongify(titleContainerControl);
+        titleContainerControl.layer.backgroundColor = HEXCOLOR(0xe8e8e8).CGColor;
+    }];
+    
+    [[titleContainerControl rac_signalForControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside] subscribeNext:^(UIControl *control) {
+        @strongify(titleContainerControl);
+        titleContainerControl.layer.backgroundColor = HEXCOLOR(0xebeced).CGColor;
+    }];
 }
 
 #pragma makr DataReaderDelegate

@@ -10,9 +10,12 @@
 		1C003D541CE86993009998FB /* EXPHomePageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C003D531CE86993009998FB /* EXPHomePageModel.m */; };
 		1C003D7C1CE995B7009998FB /* EXPClusterAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C003D7B1CE995B7009998FB /* EXPClusterAnnotationView.m */; };
 		1C06A1C71CF54D41009AB71A /* Berlin-Data.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C06A1C61CF54D41009AB71A /* Berlin-Data.json */; };
+		1C55DC761D3DF84B00E32618 /* EXPListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C55DC751D3DF84B00E32618 /* EXPListViewController.m */; };
+		1C6A5E8D1D3F29F30076942A /* EXPLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6A5E8C1D3F29F30076942A /* EXPLocationManager.m */; };
 		1C75DB491CED342B00485385 /* EXPDataReaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C75DB481CED342B00485385 /* EXPDataReaderModel.m */; };
 		1C7713BD1D009C2600042661 /* EXPMKPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C7713BC1D009C2600042661 /* EXPMKPointAnnotation.m */; };
 		1C7713C01D00A4DE00042661 /* EXPEvidenceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C7713BF1D00A4DE00042661 /* EXPEvidenceInfo.m */; };
+		1C825ACE1D4351D2001EFD41 /* EXPHosptialDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C825ACD1D4351D2001EFD41 /* EXPHosptialDetailViewController.m */; };
 		1C95F5481CEAC32400C6F99C /* EXTADT.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C95F5311CEAC32400C6F99C /* EXTADT.m */; };
 		1C95F5491CEAC32600C6F99C /* EXTConcreteProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C95F5331CEAC32400C6F99C /* EXTConcreteProtocol.m */; };
 		1C95F54A1CEAC32600C6F99C /* EXTNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C95F5371CEAC32400C6F99C /* EXTNil.m */; };
@@ -60,6 +63,11 @@
 		1C003D7A1CE995B7009998FB /* EXPClusterAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXPClusterAnnotationView.h; path = HomePage/View/EXPClusterAnnotationView.h; sourceTree = "<group>"; };
 		1C003D7B1CE995B7009998FB /* EXPClusterAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXPClusterAnnotationView.m; path = HomePage/View/EXPClusterAnnotationView.m; sourceTree = "<group>"; };
 		1C06A1C61CF54D41009AB71A /* Berlin-Data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Berlin-Data.json"; path = "Resource/Berlin-Data.json"; sourceTree = "<group>"; };
+		1C55DC741D3DF84B00E32618 /* EXPListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXPListViewController.h; path = ListPage/EXPListViewController.h; sourceTree = "<group>"; };
+		1C55DC751D3DF84B00E32618 /* EXPListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXPListViewController.m; path = ListPage/EXPListViewController.m; sourceTree = "<group>"; };
+		1C677DA71D3DBBEA00563D3E /* EXPKitMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXPKitMacros.h; sourceTree = "<group>"; };
+		1C6A5E8B1D3F29F30076942A /* EXPLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXPLocationManager.h; path = Location/EXPLocationManager.h; sourceTree = "<group>"; };
+		1C6A5E8C1D3F29F30076942A /* EXPLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXPLocationManager.m; path = Location/EXPLocationManager.m; sourceTree = "<group>"; };
 		1C75DB471CED342B00485385 /* EXPDataReaderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXPDataReaderModel.h; path = HomePage/Model/EXPDataReaderModel.h; sourceTree = "<group>"; };
 		1C75DB481CED342B00485385 /* EXPDataReaderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXPDataReaderModel.m; path = HomePage/Model/EXPDataReaderModel.m; sourceTree = "<group>"; };
 		1C75DB4A1CED36F600485385 /* EXPDataReaderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXPDataReaderDelegate.h; path = HomePage/Model/EXPDataReaderDelegate.h; sourceTree = "<group>"; };
@@ -67,6 +75,8 @@
 		1C7713BC1D009C2600042661 /* EXPMKPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXPMKPointAnnotation.m; path = HomePage/Model/EXPMKPointAnnotation.m; sourceTree = "<group>"; };
 		1C7713BE1D00A4DE00042661 /* EXPEvidenceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXPEvidenceInfo.h; path = HomePage/Model/EXPEvidenceInfo.h; sourceTree = "<group>"; };
 		1C7713BF1D00A4DE00042661 /* EXPEvidenceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXPEvidenceInfo.m; path = HomePage/Model/EXPEvidenceInfo.m; sourceTree = "<group>"; };
+		1C825ACC1D4351D2001EFD41 /* EXPHosptialDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXPHosptialDetailViewController.h; path = DetailPage/EXPHosptialDetailViewController.h; sourceTree = "<group>"; };
+		1C825ACD1D4351D2001EFD41 /* EXPHosptialDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXPHosptialDetailViewController.m; path = DetailPage/EXPHosptialDetailViewController.m; sourceTree = "<group>"; };
 		1C95F5301CEAC32400C6F99C /* EXTADT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXTADT.h; path = libextobjc/extobjc/EXTADT.h; sourceTree = "<group>"; };
 		1C95F5311CEAC32400C6F99C /* EXTADT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXTADT.m; path = libextobjc/extobjc/EXTADT.m; sourceTree = "<group>"; };
 		1C95F5321CEAC32400C6F99C /* EXTConcreteProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXTConcreteProtocol.h; path = libextobjc/extobjc/EXTConcreteProtocol.h; sourceTree = "<group>"; };
@@ -169,6 +179,33 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		1C55DC731D3DF81B00E32618 /* ListPage */ = {
+			isa = PBXGroup;
+			children = (
+				1C55DC741D3DF84B00E32618 /* EXPListViewController.h */,
+				1C55DC751D3DF84B00E32618 /* EXPListViewController.m */,
+			);
+			name = ListPage;
+			sourceTree = "<group>";
+		};
+		1C6A5E8A1D3F299E0076942A /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				1C6A5E8B1D3F29F30076942A /* EXPLocationManager.h */,
+				1C6A5E8C1D3F29F30076942A /* EXPLocationManager.m */,
+			);
+			name = Location;
+			sourceTree = "<group>";
+		};
+		1C825ACB1D43511C001EFD41 /* DetailPage */ = {
+			isa = PBXGroup;
+			children = (
+				1C825ACC1D4351D2001EFD41 /* EXPHosptialDetailViewController.h */,
+				1C825ACD1D4351D2001EFD41 /* EXPHosptialDetailViewController.m */,
+			);
+			name = DetailPage;
+			sourceTree = "<group>";
+		};
 		1C95F52F1CEAC2E900C6F99C /* libextoobjc */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +273,9 @@
 		1CF45DC61CE8530B00C07570 /* ExposeHospital */ = {
 			isa = PBXGroup;
 			children = (
+				1C825ACB1D43511C001EFD41 /* DetailPage */,
+				1C6A5E8A1D3F299E0076942A /* Location */,
+				1C55DC731D3DF81B00E32618 /* ListPage */,
 				1C95F5511CEAE5A800C6F99C /* resource */,
 				1C95F52F1CEAC2E900C6F99C /* libextoobjc */,
 				1CF45DFA1CE8539600C07570 /* HomePage */,
@@ -247,6 +287,7 @@
 				1CF45DD81CE8530B00C07570 /* Info.plist */,
 				1CF45DC71CE8530B00C07570 /* Supporting Files */,
 				1CF45E041CE8638200C07570 /* ExposeHospotal.pch */,
+				1C677DA71D3DBBEA00563D3E /* EXPKitMacros.h */,
 			);
 			path = ExposeHospital;
 			sourceTree = "<group>";
@@ -505,16 +546,19 @@
 				1C95F54D1CEAC32600C6F99C /* EXTScope.m in Sources */,
 				1C7713BD1D009C2600042661 /* EXPMKPointAnnotation.m in Sources */,
 				1C95F54F1CEAC32600C6F99C /* NSInvocation+EXT.m in Sources */,
+				1C55DC761D3DF84B00E32618 /* EXPListViewController.m in Sources */,
 				1CF45E031CE8605000C07570 /* EXPHomePageViewModel.m in Sources */,
 				1C95F54C1CEAC32600C6F99C /* EXTSafeCategory.m in Sources */,
 				1C75DB491CED342B00485385 /* EXPDataReaderModel.m in Sources */,
 				1C7713C01D00A4DE00042661 /* EXPEvidenceInfo.m in Sources */,
 				1C95F54B1CEAC32600C6F99C /* EXTRuntimeExtensions.m in Sources */,
 				1CF45DFD1CE853A900C07570 /* EXPHomePageViewController.m in Sources */,
+				1C825ACE1D4351D2001EFD41 /* EXPHosptialDetailViewController.m in Sources */,
 				1C003D7C1CE995B7009998FB /* EXPClusterAnnotationView.m in Sources */,
 				1C95F5481CEAC32400C6F99C /* EXTADT.m in Sources */,
 				1CF45DCC1CE8530B00C07570 /* AppDelegate.m in Sources */,
 				1C95F54A1CEAC32600C6F99C /* EXTNil.m in Sources */,
+				1C6A5E8D1D3F29F30076942A /* EXPLocationManager.m in Sources */,
 				1C95F5491CEAC32600C6F99C /* EXTConcreteProtocol.m in Sources */,
 				1C95F54E1CEAC32600C6F99C /* EXTSelectorChecking.m in Sources */,
 				1CF45DC91CE8530B00C07570 /* main.m in Sources */,
@@ -609,7 +653,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -647,7 +691,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

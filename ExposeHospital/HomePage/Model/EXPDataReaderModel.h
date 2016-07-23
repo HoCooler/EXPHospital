@@ -12,9 +12,14 @@
 @interface EXPDataReaderModel : NSObject
 
 @property (nonatomic, weak) id<EXPDataReaderDelegate> delegate;
+@property (nonatomic, strong) RACSubject *annotationChangedSignal;
 
 - (void)startLoadLocalAnnotations;
 
 - (void)stopLoadLocalAnnotations;
+
++ (EXPDataReaderModel *)defaultDataReaderModel;
+
+- (NSArray *)getLocalAnnotations;
 
 @end

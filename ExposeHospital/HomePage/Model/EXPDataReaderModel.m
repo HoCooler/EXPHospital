@@ -14,6 +14,10 @@
 
 @interface EXPDataReaderModel()
 @property (strong,nonatomic) NSOperationQueue *operationQueue;
+
+//tmp method
+@property (nonatomic, strong) NSMutableArray *annotationArray;
+
 @end
 
 @implementation EXPDataReaderModel
@@ -23,8 +27,20 @@
 	if (self = [super init]) {
 		_operationQueue = [[NSOperationQueue alloc] init];
 		_operationQueue.maxConcurrentOperationCount = 1;
+        _annotationArray = [NSMutableArray array];
+        _annotationChangedSignal = [RACSubject subject];
 	}
 	return self;
+}
+
++ (EXPDataReaderModel *)defaultDataReaderModel
+{
+    static EXPDataReaderModel *defaultModel;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        defaultModel = [[self alloc] init];
+    });
+    return defaultModel;
 }
 
 - (void)startLoadLocalAnnotations
@@ -73,7 +89,10 @@
 
 - (void)dispatchAnnotations:(NSArray *)annotations
 {
-		// Dispatch on main thread with some delay to simulate network requests
+    [self.annotationArray addObjectsFromArray:annotations];
+    [self.annotationChangedSignal sendNext:self.annotationArray];
+    
+    // Dispatch on main thread with some delay to simulate network requests
 	NSArray *annotationsToDispatch = [annotations copy];
 	[self.operationQueue addOperationWithBlock:^{
 		dispatch_async(dispatch_get_main_queue(), ^{
@@ -83,5 +102,10 @@
 		});
 		[NSThread sleepForTimeInterval:DELAY_BETWEEN_BATCHES];
 	}];
+}
+
+- (NSArray *)getLocalAnnotations
+{
+    return [self.annotationArray copy];
 }
 @end
