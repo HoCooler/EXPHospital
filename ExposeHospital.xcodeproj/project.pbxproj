@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		1C003D541CE86993009998FB /* EXPHomePageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C003D531CE86993009998FB /* EXPHomePageModel.m */; };
 		1C003D7C1CE995B7009998FB /* EXPClusterAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C003D7B1CE995B7009998FB /* EXPClusterAnnotationView.m */; };
-		1C06A1C71CF54D41009AB71A /* Berlin-Data.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C06A1C61CF54D41009AB71A /* Berlin-Data.json */; };
+		1C3A7F971D570F1D0033756C /* icon_rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C3A7F961D570F1D0033756C /* icon_rightArrow.png */; };
+		1C3A7F9B1D5743170033756C /* EXPDelayTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3A7F9A1D5743170033756C /* EXPDelayTimer.m */; };
 		1C55DC761D3DF84B00E32618 /* EXPListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C55DC751D3DF84B00E32618 /* EXPListViewController.m */; };
 		1C6A5E8D1D3F29F30076942A /* EXPLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6A5E8C1D3F29F30076942A /* EXPLocationManager.m */; };
 		1C75DB491CED342B00485385 /* EXPDataReaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C75DB481CED342B00485385 /* EXPDataReaderModel.m */; };
@@ -26,6 +27,11 @@
 		1C95F54F1CEAC32600C6F99C /* NSInvocation+EXT.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C95F5451CEAC32400C6F99C /* NSInvocation+EXT.m */; };
 		1C95F5501CEAC32600C6F99C /* NSMethodSignature+EXT.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C95F5471CEAC32400C6F99C /* NSMethodSignature+EXT.m */; };
 		1C95F5531CEAE5B400C6F99C /* square.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C95F5521CEAE5B400C6F99C /* square.png */; };
+		1CE9D3671D73D02C0083FDCB /* NSString+EXPDateTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE9D3661D73D02C0083FDCB /* NSString+EXPDateTransform.m */; };
+		1CEDAFBA1D6975AD0028598E /* TKAlertCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CEDAFB91D6975AD0028598E /* TKAlertCenter.m */; };
+		1CEDAFBD1D6990EC0028598E /* UIBarButtonItem+EXPBackItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CEDAFBC1D6990EC0028598E /* UIBarButtonItem+EXPBackItem.m */; };
+		1CEDAFC71D6994C00028598E /* icon_map.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CEDAFC61D6994C00028598E /* icon_map.png */; };
+		1CEDAFC91D6994ED0028598E /* icon_navigation_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CEDAFC81D6994ED0028598E /* icon_navigation_back.png */; };
 		1CF113AE1CF9AC090087D903 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CF113AD1CF9AC090087D903 /* data.json */; };
 		1CF113B21CF9AD630087D903 /* dataArray.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CF113B11CF9AD630087D903 /* dataArray.json */; };
 		1CF45DC91CE8530B00C07570 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF45DC81CE8530B00C07570 /* main.m */; };
@@ -37,6 +43,12 @@
 		1CF45DED1CE8530C00C07570 /* ExposeHospitalUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF45DEC1CE8530C00C07570 /* ExposeHospitalUITests.m */; };
 		1CF45DFD1CE853A900C07570 /* EXPHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF45DFC1CE853A900C07570 /* EXPHomePageViewController.m */; };
 		1CF45E031CE8605000C07570 /* EXPHomePageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF45E021CE8605000C07570 /* EXPHomePageViewModel.m */; };
+		1CFC76FA1D6E008B00739D99 /* EXPDetailBaseInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC76F91D6E008B00739D99 /* EXPDetailBaseInfoView.m */; };
+		1CFC76FD1D6F512F00739D99 /* EXPDetailNewsInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC76FC1D6F512F00739D99 /* EXPDetailNewsInfoView.m */; };
+		1CFC77001D72820C00739D99 /* EXPCustomLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC76FF1D72820C00739D99 /* EXPCustomLabelView.m */; };
+		1CFC77031D72946300739D99 /* icon_comment.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CFC77011D72946300739D99 /* icon_comment.png */; };
+		1CFC77041D72946300739D99 /* icon_news.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CFC77021D72946300739D99 /* icon_news.png */; };
+		1CFC77071D72A65D00739D99 /* EXPDetailNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC77061D72A65D00739D99 /* EXPDetailNewsCell.m */; };
 		5A47C8D7739837C48BD59AB9 /* libPods-ExposeHospital.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D239879717ED9A5959E058B1 /* libPods-ExposeHospital.a */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +74,9 @@
 		1C003D531CE86993009998FB /* EXPHomePageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXPHomePageModel.m; path = HomePage/Model/EXPHomePageModel.m; sourceTree = "<group>"; };
 		1C003D7A1CE995B7009998FB /* EXPClusterAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXPClusterAnnotationView.h; path = HomePage/View/EXPClusterAnnotationView.h; sourceTree = "<group>"; };
 		1C003D7B1CE995B7009998FB /* EXPClusterAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXPClusterAnnotationView.m; path = HomePage/View/EXPClusterAnnotationView.m; sourceTree = "<group>"; };
-		1C06A1C61CF54D41009AB71A /* Berlin-Data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Berlin-Data.json"; path = "Resource/Berlin-Data.json"; sourceTree = "<group>"; };
+		1C3A7F961D570F1D0033756C /* icon_rightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_rightArrow.png; path = Resource/icon_rightArrow.png; sourceTree = "<group>"; };
+		1C3A7F991D5743170033756C /* EXPDelayTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXPDelayTimer.h; path = EXPKit/EXPDelayTimer.h; sourceTree = "<group>"; };
+		1C3A7F9A1D5743170033756C /* EXPDelayTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXPDelayTimer.m; path = EXPKit/EXPDelayTimer.m; sourceTree = "<group>"; };
 		1C55DC741D3DF84B00E32618 /* EXPListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXPListViewController.h; path = ListPage/EXPListViewController.h; sourceTree = "<group>"; };
 		1C55DC751D3DF84B00E32618 /* EXPListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXPListViewController.m; path = ListPage/EXPListViewController.m; sourceTree = "<group>"; };
 		1C677DA71D3DBBEA00563D3E /* EXPKitMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXPKitMacros.h; sourceTree = "<group>"; };
@@ -102,6 +116,14 @@
 		1C95F5461CEAC32400C6F99C /* NSMethodSignature+EXT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMethodSignature+EXT.h"; path = "libextobjc/extobjc/NSMethodSignature+EXT.h"; sourceTree = "<group>"; };
 		1C95F5471CEAC32400C6F99C /* NSMethodSignature+EXT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMethodSignature+EXT.m"; path = "libextobjc/extobjc/NSMethodSignature+EXT.m"; sourceTree = "<group>"; };
 		1C95F5521CEAE5B400C6F99C /* square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = square.png; path = Resource/square.png; sourceTree = "<group>"; };
+		1CE9D3651D73D02C0083FDCB /* NSString+EXPDateTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+EXPDateTransform.h"; path = "EXPKit/NSString+EXPDateTransform.h"; sourceTree = "<group>"; };
+		1CE9D3661D73D02C0083FDCB /* NSString+EXPDateTransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+EXPDateTransform.m"; path = "EXPKit/NSString+EXPDateTransform.m"; sourceTree = "<group>"; };
+		1CEDAFB81D6975AD0028598E /* TKAlertCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKAlertCenter.h; path = EXPUIKit/TKAlertCenter.h; sourceTree = "<group>"; };
+		1CEDAFB91D6975AD0028598E /* TKAlertCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKAlertCenter.m; path = EXPUIKit/TKAlertCenter.m; sourceTree = "<group>"; };
+		1CEDAFBB1D6990EC0028598E /* UIBarButtonItem+EXPBackItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+EXPBackItem.h"; path = "EXPUIKit/UIBarButtonItem+EXPBackItem.h"; sourceTree = "<group>"; };
+		1CEDAFBC1D6990EC0028598E /* UIBarButtonItem+EXPBackItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+EXPBackItem.m"; path = "EXPUIKit/UIBarButtonItem+EXPBackItem.m"; sourceTree = "<group>"; };
+		1CEDAFC61D6994C00028598E /* icon_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_map.png; path = Resource/icon_map.png; sourceTree = "<group>"; };
+		1CEDAFC81D6994ED0028598E /* icon_navigation_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_navigation_back.png; path = Resource/icon_navigation_back.png; sourceTree = "<group>"; };
 		1CF113AD1CF9AC090087D903 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = data.json; path = Resource/data.json; sourceTree = "<group>"; };
 		1CF113B11CF9AD630087D903 /* dataArray.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = dataArray.json; path = Resource/dataArray.json; sourceTree = "<group>"; };
 		1CF45DC41CE8530B00C07570 /* ExposeHospital.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExposeHospital.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +145,16 @@
 		1CF45E011CE8605000C07570 /* EXPHomePageViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXPHomePageViewModel.h; path = HomePage/ViewModel/EXPHomePageViewModel.h; sourceTree = "<group>"; };
 		1CF45E021CE8605000C07570 /* EXPHomePageViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXPHomePageViewModel.m; path = HomePage/ViewModel/EXPHomePageViewModel.m; sourceTree = "<group>"; };
 		1CF45E041CE8638200C07570 /* ExposeHospotal.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExposeHospotal.pch; sourceTree = "<group>"; };
+		1CFC76F81D6E008B00739D99 /* EXPDetailBaseInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXPDetailBaseInfoView.h; path = DetailPage/EXPDetailBaseInfoView.h; sourceTree = "<group>"; };
+		1CFC76F91D6E008B00739D99 /* EXPDetailBaseInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXPDetailBaseInfoView.m; path = DetailPage/EXPDetailBaseInfoView.m; sourceTree = "<group>"; };
+		1CFC76FB1D6F512F00739D99 /* EXPDetailNewsInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXPDetailNewsInfoView.h; sourceTree = "<group>"; };
+		1CFC76FC1D6F512F00739D99 /* EXPDetailNewsInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXPDetailNewsInfoView.m; sourceTree = "<group>"; };
+		1CFC76FE1D72820C00739D99 /* EXPCustomLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXPCustomLabelView.h; path = EXPUIKit/EXPCustomLabelView.h; sourceTree = "<group>"; };
+		1CFC76FF1D72820C00739D99 /* EXPCustomLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXPCustomLabelView.m; path = EXPUIKit/EXPCustomLabelView.m; sourceTree = "<group>"; };
+		1CFC77011D72946300739D99 /* icon_comment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_comment.png; path = Resource/icon_comment.png; sourceTree = "<group>"; };
+		1CFC77021D72946300739D99 /* icon_news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_news.png; path = Resource/icon_news.png; sourceTree = "<group>"; };
+		1CFC77051D72A65D00739D99 /* EXPDetailNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EXPDetailNewsCell.h; path = DetailPage/EXPDetailNewsCell.h; sourceTree = "<group>"; };
+		1CFC77061D72A65D00739D99 /* EXPDetailNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EXPDetailNewsCell.m; path = DetailPage/EXPDetailNewsCell.m; sourceTree = "<group>"; };
 		CB0D06C5C04DAC4B03DC65AC /* Pods-ExposeHospital.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExposeHospital.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExposeHospital/Pods-ExposeHospital.debug.xcconfig"; sourceTree = "<group>"; };
 		D239879717ED9A5959E058B1 /* libPods-ExposeHospital.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ExposeHospital.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D249DB4B4E1286A7BBD6E70B /* Pods-ExposeHospital.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExposeHospital.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExposeHospital/Pods-ExposeHospital.release.xcconfig"; sourceTree = "<group>"; };
@@ -179,6 +211,17 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		1C3A7F981D57426D0033756C /* EXPKit */ = {
+			isa = PBXGroup;
+			children = (
+				1C3A7F991D5743170033756C /* EXPDelayTimer.h */,
+				1C3A7F9A1D5743170033756C /* EXPDelayTimer.m */,
+				1CE9D3651D73D02C0083FDCB /* NSString+EXPDateTransform.h */,
+				1CE9D3661D73D02C0083FDCB /* NSString+EXPDateTransform.m */,
+			);
+			name = EXPKit;
+			sourceTree = "<group>";
+		};
 		1C55DC731D3DF81B00E32618 /* ListPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +245,12 @@
 			children = (
 				1C825ACC1D4351D2001EFD41 /* EXPHosptialDetailViewController.h */,
 				1C825ACD1D4351D2001EFD41 /* EXPHosptialDetailViewController.m */,
+				1CFC76F81D6E008B00739D99 /* EXPDetailBaseInfoView.h */,
+				1CFC76F91D6E008B00739D99 /* EXPDetailBaseInfoView.m */,
+				1CFC76FB1D6F512F00739D99 /* EXPDetailNewsInfoView.h */,
+				1CFC76FC1D6F512F00739D99 /* EXPDetailNewsInfoView.m */,
+				1CFC77051D72A65D00739D99 /* EXPDetailNewsCell.h */,
+				1CFC77061D72A65D00739D99 /* EXPDetailNewsCell.m */,
 			);
 			name = DetailPage;
 			sourceTree = "<group>";
@@ -240,12 +289,29 @@
 		1C95F5511CEAE5A800C6F99C /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				1CFC77011D72946300739D99 /* icon_comment.png */,
+				1CFC77021D72946300739D99 /* icon_news.png */,
+				1CEDAFC81D6994ED0028598E /* icon_navigation_back.png */,
+				1CEDAFC61D6994C00028598E /* icon_map.png */,
+				1C3A7F961D570F1D0033756C /* icon_rightArrow.png */,
 				1CF113B11CF9AD630087D903 /* dataArray.json */,
 				1CF113AD1CF9AC090087D903 /* data.json */,
-				1C06A1C61CF54D41009AB71A /* Berlin-Data.json */,
 				1C95F5521CEAE5B400C6F99C /* square.png */,
 			);
 			name = resource;
+			sourceTree = "<group>";
+		};
+		1CEDAFB71D6975000028598E /* EXPUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				1CEDAFB81D6975AD0028598E /* TKAlertCenter.h */,
+				1CEDAFB91D6975AD0028598E /* TKAlertCenter.m */,
+				1CEDAFBB1D6990EC0028598E /* UIBarButtonItem+EXPBackItem.h */,
+				1CEDAFBC1D6990EC0028598E /* UIBarButtonItem+EXPBackItem.m */,
+				1CFC76FE1D72820C00739D99 /* EXPCustomLabelView.h */,
+				1CFC76FF1D72820C00739D99 /* EXPCustomLabelView.m */,
+			);
+			name = EXPUIKit;
 			sourceTree = "<group>";
 		};
 		1CF45DBB1CE8530B00C07570 = {
@@ -273,6 +339,8 @@
 		1CF45DC61CE8530B00C07570 /* ExposeHospital */ = {
 			isa = PBXGroup;
 			children = (
+				1CEDAFB71D6975000028598E /* EXPUIKit */,
+				1C3A7F981D57426D0033756C /* EXPKit */,
 				1C825ACB1D43511C001EFD41 /* DetailPage */,
 				1C6A5E8A1D3F299E0076942A /* Location */,
 				1C55DC731D3DF81B00E32618 /* ListPage */,
@@ -426,6 +494,7 @@
 				TargetAttributes = {
 					1CF45DC31CE8530B00C07570 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = RF5LM5FUVG;
 					};
 					1CF45DDC1CE8530B00C07570 = {
 						CreatedOnToolsVersion = 7.3;
@@ -463,12 +532,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CF113B21CF9AD630087D903 /* dataArray.json in Resources */,
+				1CFC77041D72946300739D99 /* icon_news.png in Resources */,
+				1CEDAFC71D6994C00028598E /* icon_map.png in Resources */,
 				1CF45DD71CE8530B00C07570 /* LaunchScreen.storyboard in Resources */,
 				1CF113AE1CF9AC090087D903 /* data.json in Resources */,
 				1CF45DD41CE8530B00C07570 /* Assets.xcassets in Resources */,
-				1C06A1C71CF54D41009AB71A /* Berlin-Data.json in Resources */,
 				1C95F5531CEAE5B400C6F99C /* square.png in Resources */,
+				1CEDAFC91D6994ED0028598E /* icon_navigation_back.png in Resources */,
 				1CF45DD21CE8530B00C07570 /* Main.storyboard in Resources */,
+				1CFC77031D72946300739D99 /* icon_comment.png in Resources */,
+				1C3A7F971D570F1D0033756C /* icon_rightArrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,6 +616,7 @@
 			files = (
 				1C95F5501CEAC32600C6F99C /* NSMethodSignature+EXT.m in Sources */,
 				1C003D541CE86993009998FB /* EXPHomePageModel.m in Sources */,
+				1CEDAFBA1D6975AD0028598E /* TKAlertCenter.m in Sources */,
 				1C95F54D1CEAC32600C6F99C /* EXTScope.m in Sources */,
 				1C7713BD1D009C2600042661 /* EXPMKPointAnnotation.m in Sources */,
 				1C95F54F1CEAC32600C6F99C /* NSInvocation+EXT.m in Sources */,
@@ -551,13 +625,20 @@
 				1C95F54C1CEAC32600C6F99C /* EXTSafeCategory.m in Sources */,
 				1C75DB491CED342B00485385 /* EXPDataReaderModel.m in Sources */,
 				1C7713C01D00A4DE00042661 /* EXPEvidenceInfo.m in Sources */,
+				1CE9D3671D73D02C0083FDCB /* NSString+EXPDateTransform.m in Sources */,
+				1CFC77001D72820C00739D99 /* EXPCustomLabelView.m in Sources */,
 				1C95F54B1CEAC32600C6F99C /* EXTRuntimeExtensions.m in Sources */,
 				1CF45DFD1CE853A900C07570 /* EXPHomePageViewController.m in Sources */,
 				1C825ACE1D4351D2001EFD41 /* EXPHosptialDetailViewController.m in Sources */,
+				1CFC77071D72A65D00739D99 /* EXPDetailNewsCell.m in Sources */,
+				1CEDAFBD1D6990EC0028598E /* UIBarButtonItem+EXPBackItem.m in Sources */,
 				1C003D7C1CE995B7009998FB /* EXPClusterAnnotationView.m in Sources */,
+				1CFC76FD1D6F512F00739D99 /* EXPDetailNewsInfoView.m in Sources */,
 				1C95F5481CEAC32400C6F99C /* EXTADT.m in Sources */,
 				1CF45DCC1CE8530B00C07570 /* AppDelegate.m in Sources */,
 				1C95F54A1CEAC32600C6F99C /* EXTNil.m in Sources */,
+				1CFC76FA1D6E008B00739D99 /* EXPDetailBaseInfoView.m in Sources */,
+				1C3A7F9B1D5743170033756C /* EXPDelayTimer.m in Sources */,
 				1C6A5E8D1D3F29F30076942A /* EXPLocationManager.m in Sources */,
 				1C95F5491CEAC32600C6F99C /* EXTConcreteProtocol.m in Sources */,
 				1C95F54E1CEAC32600C6F99C /* EXTSelectorChecking.m in Sources */,
@@ -703,12 +784,15 @@
 			baseConfigurationReference = CB0D06C5C04DAC4B03DC65AC /* Pods-ExposeHospital.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ExposeHospital/exposeHospotal.pch;
 				INFOPLIST_FILE = ExposeHospital/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cooler.ExposeHospital;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -717,12 +801,15 @@
 			baseConfigurationReference = D249DB4B4E1286A7BBD6E70B /* Pods-ExposeHospital.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ExposeHospital/exposeHospotal.pch;
 				INFOPLIST_FILE = ExposeHospital/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cooler.ExposeHospital;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -782,7 +869,7 @@
 				1CF45DF01CE8530C00C07570 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		1CF45DF11CE8530C00C07570 /* Build configuration list for PBXNativeTarget "ExposeHospital" */ = {
 			isa = XCConfigurationList;
@@ -791,7 +878,7 @@
 				1CF45DF31CE8530C00C07570 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		1CF45DF41CE8530C00C07570 /* Build configuration list for PBXNativeTarget "ExposeHospitalTests" */ = {
 			isa = XCConfigurationList;
@@ -800,7 +887,7 @@
 				1CF45DF61CE8530C00C07570 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		1CF45DF71CE8530C00C07570 /* Build configuration list for PBXNativeTarget "ExposeHospitalUITests" */ = {
 			isa = XCConfigurationList;
@@ -809,7 +896,7 @@
 				1CF45DF91CE8530C00C07570 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

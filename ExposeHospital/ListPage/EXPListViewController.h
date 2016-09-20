@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class EXPMKPointAnnotation;
 
-@interface EXPListViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate>
+@interface EXPListViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate, UISearchResultsUpdating>
+
+- (instancetype)initWithHospitals:(NSArray <EXPMKPointAnnotation *> *)hospitals;
 
 @end

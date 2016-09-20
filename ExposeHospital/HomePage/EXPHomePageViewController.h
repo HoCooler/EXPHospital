@@ -8,6 +8,10 @@
 #import "EXPDataReaderDelegate.h"
 #import "CCHMapClusterControllerDelegate.h"
 
+@class EXPMKPointAnnotation;
+
 @interface EXPHomePageViewController : UIViewController<MKMapViewDelegate, EXPDataReaderDelegate,CCHMapClusterControllerDelegate>
+
+- (instancetype)initWithAnnotation:(EXPMKPointAnnotation *)annotation;
 
 @end

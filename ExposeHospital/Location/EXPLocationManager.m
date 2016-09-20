@@ -10,7 +10,7 @@
 
 @interface EXPLocationManager()
 
-@property (nonatomic, strong) CLLocation *location;
+@property (nonatomic, strong, readwrite) CLLocation *location;
 
 @end
 
@@ -23,9 +23,7 @@
     void (^initBlock)() = ^{
         dispatch_once(&onceToken, ^{
             defaultManager = [[self alloc] init];
-            if ([defaultManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-                [defaultManager requestWhenInUseAuthorization];
-            }
+            defaultManager.delegate = defaultManager;
         });
     };
     
@@ -39,6 +37,12 @@
     return defaultManager;
 }
 
+- (void)startRequestLocation
+{
+    if ([self respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [self requestWhenInUseAuthorization];
+    }
+}
 
 #pragma mark - CLLocationManagerDelegate
 

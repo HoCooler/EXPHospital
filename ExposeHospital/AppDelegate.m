@@ -21,7 +21,6 @@
 	
 	self.window=[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
 	
-	self.window.backgroundColor =[UIColor colorWithRed:249/255.0 green:249/255.0 blue:249/255.0 alpha:1];
 	
 		//设置全局导航条风格和颜色
 	[[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:23/255.0 green:180/255.0 blue:237/255.0 alpha:1]];

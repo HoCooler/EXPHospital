@@ -13,42 +13,62 @@
 #import "EXPDataReaderModel.h"
 #import "CCHMapClusterController.h"
 #import "EXPListViewController.h"
+#import "EXPLocationManager.h"
+#import "EXPMKPointAnnotation.h"
+#import "TKAlertCenter.h"
 
 static const CGFloat kTitleViewHeight = 30.0;
-static const CGFloat kSearchIconLength = 15;
-static const CGFloat kGapBetweenSearchIconAndPlaceholder = 4;
-static const CGFloat kLeftSearchBarWidth = 60;
+static const CGFloat kLeftSearchBarWidth = 90;
 
 @interface EXPHomePageViewController ()
 
 @property (nonatomic, strong) MKMapView *mapView;
 
-@property (nonatomic, strong) EXPHomePageViewModel *viewModel;//Fetch From Network
+@property (nonatomic, strong) EXPHomePageViewModel *viewModel;//Fetch From Network (Not implemented)
 @property (nonatomic, strong) EXPDataReaderModel *dataReader;
 @property (nonatomic, strong) CCHMapClusterController *mapClusterController;
+@property (nonatomic, strong) EXPMKPointAnnotation *listAnnotation;
 
 @end
 
 @implementation EXPHomePageViewController
 
+- (instancetype)initWithAnnotation:(EXPMKPointAnnotation *)annotation
+{
+    self = [super init];
+    if (self) {
+        _listAnnotation = annotation;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-	
+    [NSThread sleepForTimeInterval:2.0];
+    
 	[self commonInit];
-	
+    
+    [[EXPLocationManager defaultManager] startRequestLocation];
+    
 	self.view.backgroundColor = [UIColor whiteColor];
 	
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        CLLocationCoordinate2D location = CLLocationCoordinate2DMake(52.516221, 13.377829);
-//        CLLocationCoordinate2D location = CLLocationCoordinate2DMake(31.3736824,121.4971624);
-       
-    });
-    
-    CLLocationCoordinate2D location = CLLocationCoordinate2DMake(30.752825,103.966526);
-    
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location, 400000, 400000);
-    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
+    if (self.listAnnotation) {
+        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(self.listAnnotation.coordinate, 4000, 4000);
+        [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
+    } else {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            //        CLLocationCoordinate2D location = CLLocationCoordinate2DMake(52.516221, 13.377829);
+            //        CLLocationCoordinate2D location = CLLocationCoordinate2DMake(31.3736824,121.4971624);
+            CLLocationCoordinate2D location = CLLocationCoordinate2DMake(30.752825,103.966526);
+            MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location, 400000, 400000);
+
+
+//            CLLocation *location = [[EXPLocationManager defaultManager] getUserLocation];
+//            MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location.coordinate, 400000, 400000);
+//            [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
+        });
+    }
     
 	[self refresh];
 }
@@ -94,35 +114,42 @@ static const CGFloat kLeftSearchBarWidth = 60;
 
 - (void)loadTheNavigationBar
 {
+    UIButton *exposoeButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, kTitleViewHeight)];
+    [exposoeButton.titleLabel setFont:Font(15)];
+    [exposoeButton.titleLabel setTextColor:[UIColor blackColor]];
+    [exposoeButton setTitle:@"我要曝光" forState:UIControlStateNormal];
+    [exposoeButton addTarget:self action:@selector(expose) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:exposoeButton];
+    self.navigationItem.leftBarButtonItem = leftItem;
+    
+    UIButton *explanationButon = [[UIButton alloc] initWithFrame:CGRectMake(0, 20, 60, kTitleViewHeight)];
+    [explanationButon setTitle:@" 说明 " forState:UIControlStateNormal];
+    [explanationButon.titleLabel setFont:Font(15)];
+    [explanationButon.titleLabel setTextColor:[UIColor blackColor]];
+    [explanationButon addTarget:self action:@selector(explanation) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:explanationButon];
+    self.navigationItem.rightBarButtonItem = rightItem;
+    
     CGFloat titleViewWidth = SCREEN_WIDTH - kLeftSearchBarWidth * 2;
     UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(kLeftSearchBarWidth, 0, titleViewWidth, kTitleViewHeight)];
+    
     UIControl *titleContainerControl = [[UIControl alloc] initWithFrame:CGRectMake(0, 0, titleViewWidth, kTitleViewHeight)];
     titleContainerControl.layer.cornerRadius = kTitleViewHeight / 2;
     titleContainerControl.layer.backgroundColor = HEXCOLOR(0xebeced).CGColor;
-    titleContainerControl.accessibilityLabel = @"请输入搜索关键词";
-    
     [titleView addSubview:titleContainerControl];
+    
     self.navigationItem.titleView = titleView;
-    
-    UIImageView *leftView = [[UIImageView alloc] initWithFrame:CGRectMake(0, (kTitleViewHeight - kSearchIconLength) / 2, kSearchIconLength, kSearchIconLength)];
-    leftView.image = [UIImage imageNamed:@"icon_food_homepage_search"];
-    
-    NSString *placeholderText = @"输入医院名称";
-    CGFloat textColLength = [placeholderText sizeWithAttributes:@{NSFontAttributeName : Font(13)}].width;
-    CGFloat textMaxLength = titleViewWidth - kTitleViewHeight - kSearchIconLength - kGapBetweenSearchIconAndPlaceholder;
-    CGFloat textRealLength = MIN(textColLength, textMaxLength);
-    
-    UILabel *placeholderLable = [[UILabel alloc] initWithFrame:CGRectMake(kSearchIconLength + kGapBetweenSearchIconAndPlaceholder, 0, textRealLength, kTitleViewHeight)];
-    placeholderLable.text = placeholderText;
+   
+    UILabel *placeholderLable = [[UILabel alloc] init];
+    placeholderLable.text = @"输入医院名称";
     placeholderLable.font = Font(13);
     placeholderLable.textColor = HEXCOLOR(0x666666);
-    
-    CGFloat iconAndTextViewWidth = kSearchIconLength + kGapBetweenSearchIconAndPlaceholder + textRealLength;
-    UIView *iconAndTextView = [[UIView alloc] initWithFrame:CGRectMake((titleViewWidth - iconAndTextViewWidth) / 2, 0, iconAndTextViewWidth, kTitleViewHeight)];
-    iconAndTextView.userInteractionEnabled = NO;
-    [iconAndTextView addSubview:leftView];
-    [iconAndTextView addSubview:placeholderLable];
-    [titleContainerControl addSubview:iconAndTextView];
+    [titleContainerControl addSubview:placeholderLable];
+    [placeholderLable mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(titleView.mas_centerY);
+        make.centerX.equalTo(titleView.mas_centerX);
+        make.height.equalTo(@15);
+    }];
     
     @weakify(self);
     [[titleContainerControl rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIControl *control) {
@@ -130,20 +157,40 @@ static const CGFloat kLeftSearchBarWidth = 60;
         EXPListViewController *listVC = [[EXPListViewController alloc] init];
         [self.navigationController pushViewController:listVC animated:YES];
     }];
-    
-    @weakify(titleContainerControl);
-    [[titleContainerControl rac_signalForControlEvents:UIControlEventTouchDown] subscribeNext:^(UIControl *control) {
-        @strongify(titleContainerControl);
-        titleContainerControl.layer.backgroundColor = HEXCOLOR(0xe8e8e8).CGColor;
-    }];
-    
-    [[titleContainerControl rac_signalForControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside] subscribeNext:^(UIControl *control) {
-        @strongify(titleContainerControl);
-        titleContainerControl.layer.backgroundColor = HEXCOLOR(0xebeced).CGColor;
-    }];
+}
+
+#pragma mark Method
+
+- (void)expose
+{
+    [[TKAlertCenter defaultCenter] postAlertWithMessage:@"曝光后台还在开发中\n尽请期待"];
+}
+
+- (void)explanation
+{
+    NSString *alertMessage = @"请勿完全根据应用内的数据做出您最终决定";
+    NSString *message = [NSString stringWithFormat:@"本引用数据来源于网络，不能保证数据绝对可靠\n%@", alertMessage];
+    NSMutableAttributedString *mutableAttributeString = [[NSMutableAttributedString alloc] initWithString:message];
+    NSRange range = [message rangeOfString:alertMessage];
+    [mutableAttributeString addAttribute:NSForegroundColorAttributeName
+                                   value:[UIColor redColor]
+                                   range:range];
+    [mutableAttributeString addAttribute:NSFontAttributeName
+                                   value:Font(13)
+                                   range:NSMakeRange(0, message.length - alertMessage.length)];
+
+    [mutableAttributeString addAttribute:NSFontAttributeName
+                                   value:Font(16)
+                                   range:range];
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"说明" message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"同意" style:UIAlertActionStyleDefault handler:nil];
+    [alertVC addAction:okAction];
+    [alertVC setValue:mutableAttributeString forKey:@"attributedMessage"];
+    [self presentViewController:alertVC animated:YES completion:nil];
 }
 
 #pragma makr DataReaderDelegate
+
 - (void)dataReader:(EXPDataReaderModel *)dataReader addAnnotations:(NSArray *)annotations
 {
 	[self.mapClusterController addAnnotations:annotations withCompletionHandler:NULL];
@@ -193,14 +240,42 @@ static const CGFloat kLeftSearchBarWidth = 60;
 		} else {
 			clusterAnnotationView = [[EXPClusterAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
 			clusterAnnotationView.canShowCallout = YES;
+            clusterAnnotationView.rightCalloutAccessoryView = ({
+                UIButton *button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+                UIImage *image = [UIImage imageNamed:@"icon_rightArrow"];
+                [button setImage:image forState:UIControlStateNormal];
+                button;
+            });
 		}
 		
 		CCHMapClusterAnnotation *clusterAnnotation = (CCHMapClusterAnnotation *)annotation;
 		clusterAnnotationView.count = clusterAnnotation.annotations.count;
 		clusterAnnotationView.uniqueLocation = clusterAnnotation.isUniqueLocation;
+        clusterAnnotationView.annotations = [clusterAnnotation.annotations copy];
+        
 		annotationView = clusterAnnotationView;
 	}
 	
 	return annotationView;
+}
+
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
+{
+    [self.mapView setRegion:[self.mapView regionThatFits:mapView.region] animated:YES];
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    if ([view isKindOfClass:[EXPClusterAnnotationView class]]) {
+        EXPClusterAnnotationView *annotationView = (EXPClusterAnnotationView *)view;
+        NSArray *annotations = [annotationView.annotations allObjects];
+        EXPListViewController *listVC = [[EXPListViewController alloc] initWithHospitals:annotations];
+        [self.navigationController pushViewController:listVC animated:YES];
+    }
+}
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    userLocation.title = @"";
 }
 @end

@@ -14,4 +14,6 @@
 
 - (CLLocation *)getUserLocation;
 
+- (void)startRequestLocation;
+
 @end

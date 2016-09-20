@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '2CCE3211D1397AF8B76CFA59'
+               BlueprintIdentifier = 'A1833E0C89BC1B098BB9E099'
                BlueprintName = 'CCHMapClusterController'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libCCHMapClusterController.a'>

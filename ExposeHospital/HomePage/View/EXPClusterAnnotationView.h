@@ -11,5 +11,6 @@
 
 @property (nonatomic, assign) NSUInteger count;
 @property (nonatomic, getter = isUniqueLocation) BOOL uniqueLocation;
+@property (nonatomic, copy) NSSet *annotations;
 
 @end

@@ -16,24 +16,24 @@
 //	EXPConfirmUnknown
 //};
 
-@interface EXPExtraInfo : NSObject
+@interface EXPExtraInfo : MTLModel<MTLJSONSerializing>
 @property (nonatomic, assign) NSInteger confirm; //是否投放 Yes/No/null/
 @property (nonatomic, copy) NSArray <EXPEvidenceInfo *> *evidences;
 @end
 
-@interface EXPMKPointAnnotation : MKPointAnnotation
+@interface EXPMKPointBaseInfo : MTLModel<MTLJSONSerializing>
 
 @property (nonatomic, copy) NSString *dataVersion;
-@property (nonatomic, copy) NSString *creatTime;
-@property (nonatomic, copy) NSString *updateTime;
-@property (nonatomic, assign) NSInteger *USID;
+@property (nonatomic, copy) NSDate *creatTime;
+@property (nonatomic, copy) NSDate *updateTime;
+@property (nonatomic, copy) NSString *USID;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *city;
 @property (nonatomic, copy) NSString *province;
 @property (nonatomic, assign) NSInteger cityID; //compute
 @property (nonatomic, copy) NSString *address;
 @property (nonatomic, copy) NSString *type; //should use enum
-@property (nonatomic, assign) CLLocationCoordinate2D hospitalCoordinate; //computer
+//@property (nonatomic, assign) CLLocationCoordinate2D hospitalCoordinate; //computer
 @property (nonatomic, copy) NSString *lat;
 @property (nonatomic, copy) NSString *lng;
 @property (nonatomic, copy) NSString *principal;
@@ -44,5 +44,11 @@
 @property (nonatomic, strong) EXPExtraInfo *hospitalNews;
 @property (nonatomic, strong) EXPExtraInfo *putian;
 @property (nonatomic, strong) EXPExtraInfo *comments;
+
+@end
+
+@interface EXPMKPointAnnotation : MKPointAnnotation
+
+@property (nonatomic, strong) EXPMKPointBaseInfo *info;
 
 @end

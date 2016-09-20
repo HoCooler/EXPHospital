@@ -1,14 +1,17 @@
 {
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "F8B72BEED3C700B6363764F70D0C3AFB8B7EA037",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "7220A93D1A5E08B0C8E5DED0604C1504075F2D7D" : 0,
+    "F8B72BEED3C700B6363764F70D0C3AFB8B7EA037" : 9223372036854775807,
     "880EB74B45CF488308DFB65177E88EDDC88C4EBC" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "CFA4D056-955A-4ABF-B121-3560E80337E1",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "7220A93D1A5E08B0C8E5DED0604C1504075F2D7D" : "",
+    "F8B72BEED3C700B6363764F70D0C3AFB8B7EA037" : "ExposeHospital\/",
     "880EB74B45CF488308DFB65177E88EDDC88C4EBC" : "ExposeHospital\/ExposeHospital\/libextobjc\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "ExposeHospital",
@@ -24,6 +27,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:jspahrsummers\/libextobjc.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "880EB74B45CF488308DFB65177E88EDDC88C4EBC"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:HoCooler\/EXPHospital.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F8B72BEED3C700B6363764F70D0C3AFB8B7EA037"
     }
   ]
 }

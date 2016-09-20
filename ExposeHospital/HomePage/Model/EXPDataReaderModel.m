@@ -67,6 +67,15 @@
 				if (latitudeAsString.length > 0 && longitudeAsString.length > 0) {
 					annotation.coordinate = CLLocationCoordinate2DMake(latitudeAsString.doubleValue, longitudeAsString.doubleValue);
 					annotation.title = name;
+                    
+//                    annotation.name = name;
+//                    annotation.lat = latitudeAsString;
+//                    annotation.lng = longitudeAsString;
+//                    annotation.city = [annotationAsJSON valueForKey:@"city"];
+//                    annotation.province = [annotationAsJSON valueForKey:@"province"];
+//                    annotation.address = [annotationAsJSON valueForKey:@"address"];
+                    annotation.info = [MTLJSONAdapter modelOfClass:[EXPMKPointBaseInfo class] fromJSONDictionary:annotationAsJSON error:nil];
+                    
 					[annotations addObject:annotation];
 				}
 			}

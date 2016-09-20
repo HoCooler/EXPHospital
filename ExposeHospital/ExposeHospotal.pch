@@ -18,6 +18,8 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "EXPKitMacros.h"
+#import "UIImageView+WebCache.h"
+#import <Mantle/Mantle.h>
 
 //#import <libextoobjc/extobjc.h>
 
