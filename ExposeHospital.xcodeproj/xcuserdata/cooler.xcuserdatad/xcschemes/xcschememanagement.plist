@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>ExposeHospital.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>1CF45DC31CE8530B00C07570</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1CF45DDC1CE8530B00C07570</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1CF45DE71CE8530C00C07570</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

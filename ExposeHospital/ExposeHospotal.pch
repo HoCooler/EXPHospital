@@ -1,0 +1,26 @@
+//
+//  ExposeHospotal.pch
+//  ExposeHospital
+//
+//  Created by HoCooler on 16/5/15.
+//  Copyright © 2016年 HoCooler. All rights reserved.
+//
+
+#ifndef ExposeHospotal_pch
+#define ExposeHospotal_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <Masonry/Masonry.h>
+#import <MapKit/MapKit.h>
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "EXPKitMacros.h"
+#import "UIImageView+WebCache.h"
+#import <Mantle/Mantle.h>
+
+//#import <libextoobjc/extobjc.h>
+
+#endif /* ExposeHospotal_pch */
